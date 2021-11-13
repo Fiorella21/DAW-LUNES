@@ -1,0 +1,20 @@
+
+#btn1{
+	background-color: red;
+}
+
+
+#btn2{
+	background-color: yellow;
+}
+
+
+#btn3{
+	background-color: green;
+}
+
+#content{
+	text-shadow: 2px epx 5px red;
+	height: 100px;
+	border: 2px solid blueviolet;
+}
