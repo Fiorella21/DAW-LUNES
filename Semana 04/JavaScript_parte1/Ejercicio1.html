@@ -1,0 +1,74 @@
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>TODO</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+		form#form {
+			display: flex;
+		}
+	</style>
+</head>
+<body>
+	<div class="container text-center">
+		<h2>TODO</h2>
+		<form id="form" action="">
+			<input id="new_note" class="form-control" type="text" name="new_note">
+			<a onclick="add()" class="btn btn-success">+</a>
+		</form>
+		<div id="tareas">
+		</div>
+	</div>
+	<script>
+		let tareas = [];
+
+		/**
+		 * Función para añadir una nueva tarea
+		 */
+		let add = function() {
+			let new_note = document.querySelector('#new_note');
+			// Guardamos la tarea en el array
+			tareas.push(new_note.value);
+			// Borramos la tarea del input
+			new_note.value = '';
+			new_note.focus();
+			// Redibujamos
+			render();
+		}
+
+		/**
+		  Función para borrar una tarea
+		  */
+		let del = function(pos) {
+			// Borramos de tareas
+			tareas.splice(pos, 1);
+			// Redibujamos
+			render();
+		}
+
+		/**
+		 * Función que redibuja las tareas
+		 */
+		let render = function() {
+			let html_tareas = document.querySelector('#tareas');
+			let html_final = '';
+			// Generamos el HTML
+			let num = 0;
+			for(let i of tareas) {
+				html_final += `
+					<div class="panel panel-default">
+						<a href="#" class="btn btn-danger pull-right" onclick="del(${num})">X</a>
+						<div class="panel-body">
+						${i}
+						</div>
+					</div>	
+					`;
+				num += 1;
+			}
+			// Insertamos el HTML
+			html_tareas.innerHTML = html_final;
+		}
+	</script>
+</body>
+</html>
