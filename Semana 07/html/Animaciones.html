@@ -1,0 +1,59 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel='stylesheet' type='text/css'  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--<script src="/js/jquery-3.6.0.js" ></script>-->
+
+    <link rel="stylesheet" href="/css/animacion.css">
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    
+  </head>
+
+
+  <div>
+  <button id="boton-mostrar">Mostrar</button>
+  <button id="boton-ocultar">Ocultar</button>
+
+  <p id="parrafo">Haz clic en los botones de arriba para mostrar o ocultar este parrafo</p>
+
+
+<script>
+
+$(function(){
+  var botonMostrar = $("#boton-mostrar"),
+      botonOcultar = $("#boton-ocultar"),
+      parrafo = $("#parrafo");
+
+      botonMostrar.on("click", function(){
+          parrafo.show();
+      });
+
+      botonOcultar.on("click", function(){
+          parrafo.hide();
+      });
+
+});
+
+
+$(document).ready(function(){
+    $("buton").click(function(){
+        $("#cuadrado").animate({
+            height: '150px',
+            left: '500px',
+            opacity: '0.7',
+            top: '100px',
+            width: '150px'
+        }, 1500);
+    });
+});
+
+
+</script>
+</div>
+
+

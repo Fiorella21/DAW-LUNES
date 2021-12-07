@@ -1,0 +1,39 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>jQuery</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <link rel='stylesheet' type='text/css'  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"> 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <!--<script src="/js/jquery-3.6.0.js" ></script>-->
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    
+  </head>
+
+<div  style="padding: 50px;" >
+
+     <p id="parrafo"style="color:#FF0040;">Esto es un parrafo de texto de color rojo.</p>
+     <button class="btn btn-success" id="boton">Click para obtener la propiedad</button>
+
+<button id="btn1">Button1</button>
+
+<script>
+    $("#btn1").click(function() {
+        $("#btn1").css({
+            'border': '3px solid #47FB2D',
+            'color': '#47FB2D',
+            'background-color': '#225252'
+        })
+    });
+
+$(document).ready(function(){
+   $("#boton").click(function(){
+      alert("El color de texto es " +  $("#parrafo").css("color"));   
+   });
+});
+
+</script>
+
+</div>
